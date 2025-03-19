@@ -16,8 +16,22 @@ conda install -c conda-forge mlx-lm
 pip3 install transformers==4.45.2
 ```
 
-
 ??? : `pip3 install unsloth==2024.10.4 torch==2.4.1`
+
+## manage models
+
+
+```
+mlx_lm.manage --scan
+mlx_lm.manage --delete --pattern DeepSeek-R1-Distill-Qwen-32B-4bit
+```
+
+```
+Scanning Hugging Face cache for models with pattern "mlx".
+REPO ID                                         REPO TYPE SIZE ON DISK NB FILES LAST_ACCESSED     LAST_MODIFIED  LOCAL PATH
+----------------------------------------------- --------- ------------ -------- ----------------- -------------- ------------------------------------------------------------------------------------------
+mlx-community/DeepSeek-R1-Distill-Qwen-32B-4bit model            18.4G        9 6 minutes ago     6 minutes ago  $HOME/.cache/huggingface/hub/models--mlx-community--DeepSeek-R1-Distill-Qwen-32B-4bit
+```
 
 ## hugging face
 
@@ -25,7 +39,7 @@ pip3 install transformers==4.45.2
 
 ### mlx community
 
-`mlx-community/Mistral-7B-Instruct-v0.3-4bit`
+#### `mlx-community/Mistral-7B-Instruct-v0.3-4bit`
 
 ```shell
 # ERROR # mlx_lm.generate --model mlx-community/Mistral-7B-Instruct-v0.3-4bit --prompt "hello"
@@ -44,7 +58,7 @@ Generation: 33 tokens, 15.054 tokens-per-sec
 Peak memory: 4.126 GB
 ```
 
-`mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit`
+#### `mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit`
 
 
 <https://huggingface.co/mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit>
@@ -54,6 +68,7 @@ Peak memory: 4.126 GB
 mlx_lm.generate --model mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit --prompt "hello"
 ```
 
+yields
 
 ```
 ==========
@@ -69,7 +84,7 @@ Peak memory: 4.316 GB
 
 
 
-`mlx-community/DeepSeek-R1-Distill-Llama-8B-4bit`
+####  `mlx-community/DeepSeek-R1-Distill-Llama-8B-4bit`
 
 <https://huggingface.co/mlx-community/DeepSeek-R1-Distill-Llama-8B-4bit>
 
@@ -98,7 +113,7 @@ Generation: 84 tokens, 13.541 tokens-per-sec
 Peak memory: 4.564 GB
 ```
 
-`mlx-community/DeepSeek-R1-Distill-Qwen-7B-8bit`
+####  `mlx-community/DeepSeek-R1-Distill-Qwen-7B-8bit`
 
 <https://huggingface.co/mlx-community/DeepSeek-R1-Distill-Qwen-7B-8bit>
 
@@ -120,7 +135,47 @@ Generation: 66 tokens, 7.833 tokens-per-sec
 Peak memory: 8.119 GB
 ```
 
-### llama 3.2 1B 4b
+#### `mlx-community/DeepSeek-R1-Distill-Qwen-14B-4bit`
+
+https://huggingface.co/mlx-community/DeepSeek-R1-Distill-Qwen-14B-4bit
+
+```shell
+mlx_lm.generate --model mlx-community/DeepSeek-R1-Distill-Qwen-14B-4bit --prompt "hello"
+```
+
+yields
+
+```
+Alright, the user said "hello". That's a friendly greeting. I should respond in a welcoming manner
+
+I want to make sure they feel comfortable asking for help. Maybe I'll ask how I can assist them today.
+
+Keeping it open-ended so they can specify what they need.
+</think>
+
+Hello! How can I assist you today?
+==========
+Prompt: 6 tokens, 9.154 tokens-per-sec
+Generation: 69 tokens, 7.041 tokens-per-sec
+Peak memory: 8.372 GB
+```
+
+#### `mlx-community/DeepSeek-R1-Distill-Qwen-14B-3bit`
+
+
+```
+mlx_lm.generate --model mlx-community/DeepSeek-R1-Distill-Qwen-14B-3bit --prompt "hello"
+```
+
+## TOO BIG
+
+- `mlx-community/DeepSeek-R1-Distill-Qwen-32B-4bit` hangs system on 16GB RAM M1 Mac mini
+
+
+
+### fast!
+
+llama 3.2 1B 4b
 
 <https://huggingface.co/mlx-community/Llama-3.2-1B-Instruct-4bit>
 
@@ -128,7 +183,7 @@ Peak memory: 8.119 GB
 ```python
 from mlx_lm import load, generate
 
-model, tokenizer = load("mlx-community/Llama-3.2-1B-Instruct-4bit")
+model, tokenizer = load("mlx-community/Llama-3.2-1B-Instruct-4bit`w")
 
 prompt = "hello"
 
@@ -153,4 +208,22 @@ Hello! How can I help you today?
 Prompt: 36 tokens, 338.614 tokens-per-sec
 Generation: 10 tokens, 83.337 tokens-per-sec
 Peak memory: 0.754 GB
+```
+
+
+#### `mlx-community/Llama-3.2-3B-Instruct-4bit`
+
+```
+mlx_lm.generate --model mlx-community/Llama-3.2-3B-Instruct-4bit --prompt "hello"
+```
+
+yields
+
+```
+==========
+Hello! It's nice to meet you. Is there something I can help you with or would you like to chat?
+==========
+Prompt: 36 tokens, 132.430 tokens-per-sec
+Generation: 25 tokens, 28.813 tokens-per-sec
+Peak memory: 1.905 GB
 ```

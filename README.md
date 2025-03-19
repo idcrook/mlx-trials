@@ -171,6 +171,14 @@ mlx_lm.generate --model mlx-community/DeepSeek-R1-Distill-Qwen-14B-3bit --prompt
 
 - `mlx-community/DeepSeek-R1-Distill-Qwen-32B-4bit` hangs system on 16GB RAM M1 Mac mini
 
+mlx-community/DeepSeek-R1-Distill-Qwen-32B-3bit
+
+
+```
+mlx_lm.generate --model mlx-community/DeepSeek-R1-Distill-Qwen-32B-3bit --prompt "hello"
+```
+
+
 
 
 ### fast!

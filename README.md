@@ -21,6 +21,52 @@ pip3 install transformers==4.45.2
 
 ## hugging face
 
+<https://huggingface.co/mlx-community>
+
+### mlx community
+
+`mlx-community/Mistral-7B-Instruct-v0.3-4bit`
+
+```shell
+# ERROR # mlx_lm.generate --model mlx-community/Mistral-7B-Instruct-v0.3-4bit --prompt "hello"
+# ValueError: Cannot instantiate this tokenizer from a slow version. If it's based on sentencepiece, make sure you have sentencepiece installed.
+#  pip install sentencepiece
+```
+
+yields
+
+```
+==========
+Hello! How can I help you today? If you have any questions or need assistance with something, feel free to ask. I'm here to help.
+==========
+Prompt: 7 tokens, 23.787 tokens-per-sec
+Generation: 33 tokens, 15.054 tokens-per-sec
+Peak memory: 4.126 GB
+```
+
+`mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit`
+
+```
+mlx_lm.generate --model mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit --prompt "hello"
+```
+
+
+
+```
+==========
+Okay, the user just said "hello." I should respond in a friendly and welcoming way. Maybe say something like, "Hello! How can I assist you today?" That should cover it and let them know I'm here to help.
+</think>
+
+Hello! How can I assist you today?
+==========
+Prompt: 6 tokens, 12.215 tokens-per-sec
+Generation: 60 tokens, 14.596 tokens-per-sec
+Peak memory: 4.316 GB
+```
+
+
+### llama 3.2 1B 4b
+
 <https://huggingface.co/mlx-community/Llama-3.2-1B-Instruct-4bit>
 
 

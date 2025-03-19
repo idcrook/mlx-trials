@@ -171,14 +171,25 @@ mlx_lm.generate --model mlx-community/DeepSeek-R1-Distill-Qwen-14B-3bit --prompt
 
 - `mlx-community/DeepSeek-R1-Distill-Qwen-32B-4bit` hangs system on 16GB RAM M1 Mac mini
 
-mlx-community/DeepSeek-R1-Distill-Qwen-32B-3bit
-
+#### `mlx-community/DeepSeek-R1-Distill-Qwen-32B-3bit`
 
 ```
 mlx_lm.generate --model mlx-community/DeepSeek-R1-Distill-Qwen-32B-3bit --prompt "hello"
 ```
 
+```
+[WARNING] Generating with a model that requires 13671 MB which is close to the maximum recommended size of 10922 MB. This can be slow. See the documentation for possible work-arounds: https://github.com/ml-explore/mlx-lm/tree/main#large-models
+```
 
+try workaround
+
+```
+sudo sysctl iogpu.wired_limit_mb=14000
+
+iogpu.wired_limit_mb: 0 -> 14000
+```
+
+still hangs
 
 
 ### fast!

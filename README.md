@@ -46,10 +46,13 @@ Peak memory: 4.126 GB
 
 `mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit`
 
+
+<https://huggingface.co/mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit>
+
+
 ```
 mlx_lm.generate --model mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit --prompt "hello"
 ```
-
 
 
 ```
@@ -64,6 +67,58 @@ Generation: 60 tokens, 14.596 tokens-per-sec
 Peak memory: 4.316 GB
 ```
 
+
+
+`mlx-community/DeepSeek-R1-Distill-Llama-8B-4bit`
+
+<https://huggingface.co/mlx-community/DeepSeek-R1-Distill-Llama-8B-4bit>
+
+
+```
+mlx_lm.generate --model mlx-community/DeepSeek-R1-Distill-Llama-8B-4bit --prompt "hello"
+```
+
+yields
+
+```
+==========
+Alright, the user said "hello." That's a friendly greeting. I should respond in a welcoming manner.
+
+I want to make sure they feel comfortable asking for help. Maybe I can offer my assistance.
+
+I should keep it open-ended so they know I'm here to help with whatever they need.
+
+Let me make sure my response is warm and approachable.
+</think>
+
+Hello! How can I assist you today?
+==========
+Prompt: 6 tokens, 19.489 tokens-per-sec
+Generation: 84 tokens, 13.541 tokens-per-sec
+Peak memory: 4.564 GB
+```
+
+`mlx-community/DeepSeek-R1-Distill-Qwen-7B-8bit`
+
+<https://huggingface.co/mlx-community/DeepSeek-R1-Distill-Qwen-7B-8bit>
+
+```
+mlx_lm.generate --model mlx-community/DeepSeek-R1-Distill-Qwen-7B-8bit --prompt "hello"
+```
+
+yields
+
+```
+==========
+Alright, the user just said "hello." That's a friendly greeting. I should respond in a warm and welcoming manner. Maybe say something like, "Hello! How can I assist you today?" That should cover it and let them know I'm here to help.
+</think>
+
+Hello! How can I assist you today?
+==========
+Prompt: 6 tokens, 14.606 tokens-per-sec
+Generation: 66 tokens, 7.833 tokens-per-sec
+Peak memory: 8.119 GB
+```
 
 ### llama 3.2 1B 4b
 

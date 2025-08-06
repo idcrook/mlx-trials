@@ -45,7 +45,7 @@ Peak memory: 8.041 GB
 
 ### mlx-community/gemma-3-4b-it-4bit-DWQ (text)
 
-```shell
+```text
 ❯ mlx_lm.generate --model mlx-community/gemma-3-4b-it-4bit-DWQ --prompt "hello"
 Prompt: 10 tokens, 14.259 tokens-per-sec
 Generation: 48 tokens, 20.689 tokens-per-sec
@@ -54,7 +54,7 @@ Peak memory: 2.613 GB
 
 ### mlx-community/gemma-3-4b-it-4bit
 
-```shell
+```text
 ❯ mlx_lm.generate --model mlx-community/gemma-3-4b-it-4bit  --prompt "hello"
 Prompt: 10 tokens, 16.007 tokens-per-sec
 Generation: 67 tokens, 22.391 tokens-per-sec
@@ -63,7 +63,7 @@ Peak memory: 2.613 GB
 
 ### mlx-community/gemma-3-4b-it-abliterated-8bit-text
 
-```shell
+```text
 mlx_lm.generate --model mlx-community/gemma-3-4b-it-abliterated-8bit-text  --prompt "hello"
 ==========
 Prompt: 10 tokens, 5.968 tokens-per-sec
@@ -73,7 +73,7 @@ Peak memory: 4.889 GB
 
 ### mlx-community/gemma-3-4b-it-8bit (visual)
 
-```shell
+```text
 mlx_lm.generate --model  mlx-community/gemma-3-4b-it-8bit  --prompt "hello"
 Prompt: 10 tokens, 8.925 tokens-per-sec
 Generation: 24 tokens, 12.443 tokens-per-sec
@@ -87,7 +87,7 @@ for karakeep inference
       OPENAI_BASE_URL: "http://192.168.50.7:11434/v1"
       OPENAI_API_KEY: "nokey"
 
-```text
+```shell
 mlx_lm.server --model mlx-community/gemma-3-4b-it-8bit --port 11434 --host 192.168.50.7
 ```
 

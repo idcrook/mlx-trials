@@ -1,5 +1,5 @@
 
-# mpl-lm
+# mlx-lm
 
 <https://github.com/ml-explore/mlx-lm>
 

@@ -63,7 +63,7 @@ Peak memory: 2.613 GB
 
 ### mlx-community/gemma-3-4b-it-abliterated-8bit-text
 
-```
+```shell
 mlx_lm.generate --model mlx-community/gemma-3-4b-it-abliterated-8bit-text  --prompt "hello"
 ==========
 Prompt: 10 tokens, 5.968 tokens-per-sec
@@ -73,7 +73,7 @@ Peak memory: 4.889 GB
 
 ### mlx-community/gemma-3-4b-it-8bit (visual)
 
-```
+```shell
 mlx_lm.generate --model  mlx-community/gemma-3-4b-it-8bit  --prompt "hello"
 Prompt: 10 tokens, 8.925 tokens-per-sec
 Generation: 24 tokens, 12.443 tokens-per-sec
@@ -93,7 +93,7 @@ mlx_lm.server --model mlx-community/gemma-3-4b-it-8bit --port 11434 --host 192.1
 
 similar
 
-```
+```shell
 curl http://192.168.50.7:11434/v1/chat/completions \
   -H "Content-Type: application/json" \
   -d '{
@@ -117,7 +117,7 @@ https://kconner.com/2025/02/17/running-local-llms-with-mlx.html
 
 in conda env
 
-```
+```shell
 conda install -c conda-forge llm
 
 # plugin
@@ -136,7 +136,7 @@ https://pypi.org/project/mlx-llm-server/
 
 https://github.com/mzbac/mlx-llm-server
 
-```
+```shell
 conda create -n mlx-llm python=3.10
 conda activate mlx-llm
 conda_enter mlx-llm
@@ -157,7 +157,7 @@ need to try ` --model-type lm `
 
 https://github.com/cubist38/mlx-openai-server
 
-```
+```shell
 conda create -n mlx-server python=3.11 -y
 conda activate mlx-server
 conda_enter mlx-server

@@ -1,9 +1,8 @@
-
 # mlx-lm
 
 <https://github.com/ml-explore/mlx-lm>
 
-```
+```shell
 #conda create -n py39-mlx python=3.9 -y
 #conda install -c conda-forge mlx-lm
 conda create -n py312-mlx python=3.12 -y
@@ -20,13 +19,14 @@ pip3 install transformers==4.45.2
 
 ## manage models
 
-
-```
+```shell
 mlx_lm.manage --scan
 mlx_lm.manage --delete --pattern DeepSeek-R1-Distill-Qwen-32B-4bit
 ```
 
-```
+listing example
+
+```shell
 Scanning Hugging Face cache for models with pattern "mlx".
 REPO ID                                         REPO TYPE SIZE ON DISK NB FILES LAST_ACCESSED     LAST_MODIFIED  LOCAL PATH
 ----------------------------------------------- --------- ------------ -------- ----------------- -------------- ------------------------------------------------------------------------------------------
@@ -49,7 +49,7 @@ mlx-community/DeepSeek-R1-Distill-Qwen-32B-4bit model            18.4G        9 
 
 yields
 
-```
+```text
 ==========
 Hello! How can I help you today? If you have any questions or need assistance with something, feel free to ask. I'm here to help.
 ==========
@@ -60,11 +60,10 @@ Peak memory: 4.126 GB
 
 #### `mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit`
 
-
 <https://huggingface.co/mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit>
 
 
-```
+```shell
 mlx_lm.generate --model mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit --prompt "hello"
 ```
 
@@ -82,12 +81,9 @@ Generation: 60 tokens, 14.596 tokens-per-sec
 Peak memory: 4.316 GB
 ```
 
-
-
 ####  `mlx-community/DeepSeek-R1-Distill-Llama-8B-4bit`
 
 <https://huggingface.co/mlx-community/DeepSeek-R1-Distill-Llama-8B-4bit>
-
 
 ```
 mlx_lm.generate --model mlx-community/DeepSeek-R1-Distill-Llama-8B-4bit --prompt "hello"
@@ -95,7 +91,7 @@ mlx_lm.generate --model mlx-community/DeepSeek-R1-Distill-Llama-8B-4bit --prompt
 
 yields
 
-```
+```text
 ==========
 Alright, the user said "hello." That's a friendly greeting. I should respond in a welcoming manner.
 
@@ -117,13 +113,13 @@ Peak memory: 4.564 GB
 
 <https://huggingface.co/mlx-community/DeepSeek-R1-Distill-Qwen-7B-8bit>
 
-```
+```shell
 mlx_lm.generate --model mlx-community/DeepSeek-R1-Distill-Qwen-7B-8bit --prompt "hello"
 ```
 
 yields
 
-```
+```text
 ==========
 Alright, the user just said "hello." That's a friendly greeting. I should respond in a warm and welcoming manner. Maybe say something like, "Hello! How can I assist you today?" That should cover it and let them know I'm here to help.
 </think>
@@ -145,7 +141,7 @@ mlx_lm.generate --model mlx-community/DeepSeek-R1-Distill-Qwen-14B-4bit --prompt
 
 yields
 
-```
+```text
 Alright, the user said "hello". That's a friendly greeting. I should respond in a welcoming manner
 
 I want to make sure they feel comfortable asking for help. Maybe I'll ask how I can assist them today.
@@ -163,7 +159,7 @@ Peak memory: 8.372 GB
 #### `mlx-community/DeepSeek-R1-Distill-Qwen-14B-3bit`
 
 
-```
+```shell
 mlx_lm.generate --model mlx-community/DeepSeek-R1-Distill-Qwen-14B-3bit --prompt "hello"
 ```
 
@@ -173,24 +169,22 @@ mlx_lm.generate --model mlx-community/DeepSeek-R1-Distill-Qwen-14B-3bit --prompt
 
 #### `mlx-community/DeepSeek-R1-Distill-Qwen-32B-3bit`
 
-```
+```shell
 mlx_lm.generate --model mlx-community/DeepSeek-R1-Distill-Qwen-32B-3bit --prompt "hello"
 ```
 
-```
+```text
 [WARNING] Generating with a model that requires 13671 MB which is close to the maximum recommended size of 10922 MB. This can be slow. See the documentation for possible work-arounds: https://github.com/ml-explore/mlx-lm/tree/main#large-models
 ```
 
 try workaround
 
-```
+```shell
 sudo sysctl iogpu.wired_limit_mb=14000
 
 iogpu.wired_limit_mb: 0 -> 14000
 ```
-
 still hangs
-
 
 ### fast!
 
@@ -217,7 +211,7 @@ response = generate(model, tokenizer, prompt=prompt, verbose=True)
 
 can run from env
 
-```
+```text
 python chat.py
 
 Fetching 6 files: ...
@@ -232,13 +226,13 @@ Peak memory: 0.754 GB
 
 #### `mlx-community/Llama-3.2-3B-Instruct-4bit`
 
-```
+```shell
 mlx_lm.generate --model mlx-community/Llama-3.2-3B-Instruct-4bit --prompt "hello"
 ```
 
 yields
 
-```
+```text
 ==========
 Hello! It's nice to meet you. Is there something I can help you with or would you like to chat?
 ==========
